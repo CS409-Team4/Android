@@ -1,5 +1,6 @@
 package com.example.jangyoungsoo.iui_android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -37,10 +38,17 @@ public class MainActivity extends AppCompatActivity
         gridview.setAdapter(new MainGridAdapter(this));
 
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v,
-                                    int position, long id) {
-                Toast.makeText(getApplicationContext(), "" + position,
-                        Toast.LENGTH_SHORT).show();
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                Intent intent = null;
+
+                switch (position) {
+                    case 0:
+                        break;
+                    case 1:
+                        intent = new Intent(MainActivity.this, UserProfileActivity.class);
+                        startActivity(intent);
+                        break;
+                }
             }
         });
     }
