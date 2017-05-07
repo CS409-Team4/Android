@@ -13,7 +13,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -43,6 +42,8 @@ public class MainActivity extends AppCompatActivity
 
                 switch (position) {
                     case 0:
+                        intent = new Intent(MainActivity.this, LayoutsActivity.class);
+                        startActivity(intent);
                         break;
                     case 1:
                         intent = new Intent(MainActivity.this, UserProfileActivity.class);

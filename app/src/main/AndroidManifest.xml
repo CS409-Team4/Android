@@ -21,6 +21,9 @@
         <activity
             android:name=".UserProfileActivity"
             android:label="User profile"></activity>
+        <activity
+            android:name=".LayoutsActivity"
+            android:label="Layouts"></activity>
     </application>
 
 </manifest>
