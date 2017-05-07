@@ -49,6 +49,10 @@ public class MainActivity extends AppCompatActivity
                         intent = new Intent(MainActivity.this, UserProfileActivity.class);
                         startActivity(intent);
                         break;
+                    case 2:
+                        intent = new Intent(MainActivity.this, ConferenceAgendaActivity.class);
+                        startActivity(intent);
+                        break;
                 }
             }
         });

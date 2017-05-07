@@ -19,11 +19,14 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".LayoutsActivity"
+            android:label="Layouts"></activity>
+        <activity
             android:name=".UserProfileActivity"
             android:label="User profile"></activity>
         <activity
-            android:name=".LayoutsActivity"
-            android:label="Layouts"></activity>
+            android:name=".ConferenceAgendaActivity"
+            android:label="Conference Agenda"></activity>
     </application>
 
 </manifest>

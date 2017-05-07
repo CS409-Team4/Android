@@ -28,27 +28,27 @@
             android:layout_weight="1"
             android:layout_marginRight="4dp">
 
-            <TextView
+            <Button
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:layout_marginBottom="4dp"
                 android:background="@color/colorBlue"/>
 
-            <TextView
+            <Button
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginBottom="4dp"
                 android:background="@color/colorRed"/>
 
-            <TextView
+            <Button
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="@color/colorYellow"/>
 
         </LinearLayout>
 
-        <TextView
+        <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -56,7 +56,7 @@
 
     </LinearLayout>
 
-    <TextView
+    <Button
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@color/colorLightgreen"/>

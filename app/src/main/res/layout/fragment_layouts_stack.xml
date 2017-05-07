@@ -16,7 +16,7 @@
         android:layout_marginBottom="10dp"
         android:id="@+id/stv1" />
 
-    <TextView
+    <Button
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -24,7 +24,7 @@
         android:background="@color/colorRed"
         android:id="@+id/stv2" />
 
-    <TextView
+    <Button
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -32,7 +32,7 @@
         android:background="@color/colorLightblue"
         android:id="@+id/stv3" />
 
-    <TextView
+    <Button
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -40,7 +40,7 @@
         android:background="@color/colorLightgreen"
         android:id="@+id/stv4" />
 
-    <TextView
+    <Button
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -48,7 +48,7 @@
         android:background="@color/colorYellow"
         android:id="@+id/stv5" />
 
-    <TextView
+    <Button
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
