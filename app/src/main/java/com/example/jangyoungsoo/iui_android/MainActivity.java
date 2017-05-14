@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -51,6 +52,10 @@ public class MainActivity extends AppCompatActivity
                         break;
                     case 2:
                         intent = new Intent(MainActivity.this, ConferenceAgendaActivity.class);
+                        startActivity(intent);
+                        break;
+                    case 3:
+                        intent = new Intent(MainActivity.this, ItemLayoutsActivity.class);
                         startActivity(intent);
                         break;
                 }

@@ -27,6 +27,9 @@
         <activity
             android:name=".ConferenceAgendaActivity"
             android:label="Conference Agenda"></activity>
+        <activity
+            android:name=".ItemLayoutsActivity"
+            android:label="Item layouts"></activity>
     </application>
 
 </manifest>
