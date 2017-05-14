@@ -1,110 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:orientation="horizontal"
+    <android.support.design.widget.TabLayout
+        android:id="@+id/ca_tabLayout"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:background="@color/colorTab">
+        android:layout_height="56dp"
+        android:background="#4ac1fa"
+        app:tabTextColor="#ffffff"
+        app:tabSelectedTextColor="#ffffff"
+        app:tabIndicatorColor="#FAC950"
+        app:tabIndicatorHeight="5dp" />
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <Button
-                android:text="May 3"
-                android:textColor="#ffffff"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/button1"
-                android:background="@drawable/ca_button"
-                android:layout_weight="1" />
-
-            <TextView
-                android:id="@+id/tv_button1"
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:background="@color/colorYellow" />
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <Button
-                android:text="May 4"
-                android:textColor="#ffffff"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/button2"
-                android:background="@drawable/ca_button"
-                android:layout_weight="1" />
-
-            <TextView
-                android:id="@+id/tv_button2"
-                android:layout_width="match_parent"
-                android:layout_height="5dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <Button
-                android:text="May 5"
-                android:textColor="#ffffff"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/button3"
-                android:background="@drawable/ca_button"
-                android:layout_weight="1" />
-
-            <TextView
-                android:id="@+id/tv_button3"
-                android:layout_width="match_parent"
-                android:layout_height="5dp" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <FrameLayout
+    <android.support.v4.view.ViewPager
+        android:id="@+id/ca_viewPager"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:padding="15dp"
-        android:background="#ffffff">
-
-        <LinearLayout
-            android:gravity="center"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <SearchView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:queryHint="Search"
-                android:iconifiedByDefault="false"/>
-
-        </LinearLayout>
-
-    </FrameLayout>
-
-    <ListView
-        android:id="@+id/listview_agenda"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorAccent" />
+        android:layout_height="match_parent" />
 
 </LinearLayout>

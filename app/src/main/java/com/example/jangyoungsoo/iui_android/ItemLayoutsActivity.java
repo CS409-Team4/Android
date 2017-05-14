@@ -32,11 +32,8 @@ public class ItemLayoutsActivity extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-//        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-//        startActivity(intent);
-//        return true;
         switch (item.getItemId()) {
-            case R.id.home:
+            case android.R.id.home:
                 finish();
                 return true;
             case R.id.action_listview:
@@ -44,14 +41,16 @@ public class ItemLayoutsActivity extends AppCompatActivity {
                     il_listview.setVisibility(View.GONE);
                     il_gridview.setVisibility(View.VISIBLE);
                     isListView = false;
+                    item.setIcon(R.drawable.ic_list_view);
                 } else {
                     il_listview.setVisibility(View.VISIBLE);
                     il_gridview.setVisibility(View.GONE);
                     isListView = true;
+                    item.setIcon(R.drawable.ic_listview_layouts_wrap);
                 }
                 return true;
         }
-        return true;
+        return super.onOptionsItemSelected(item);
     }
 
     @Override

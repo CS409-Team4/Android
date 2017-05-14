@@ -1,82 +1,112 @@
 package com.example.jangyoungsoo.iui_android;
 
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.ListView;
-
-import java.util.ArrayList;
-import java.util.List;
+import android.view.Menu;
+import android.view.MenuItem;
 
 public class ConferenceAgendaActivity extends AppCompatActivity {
 
-    private ListView listView_agenda;
-    private CAListViewAdapter caListViewAdapter1;
-    private CAListViewAdapter caListViewAdapter2;
-    private CAListViewAdapter caListViewAdapter3;
-    private ArrayList<String[]> agenda1;
-    private ArrayList<String[]> agenda2;
-    private ArrayList<String[]> agenda3;
-    public static List<Integer> favoriteList = new ArrayList<>();
+    private SectionsPagerAdapter sectionsPagerAdapter;
+
+    private ViewPager viewPager;
+
+    private CAFragment caFragment;
+    private CAFragment caFragment2;
+    private CAFragment caFragment3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_conferenceagenda);
 
-        setAgenda();
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
-        listView_agenda = (ListView) findViewById(R.id.listview_agenda);
+        caFragment = new CAFragment();
+        caFragment2 = new CAFragment();
+        caFragment3 = new CAFragment();
 
-        caListViewAdapter1 = new CAListViewAdapter(this, agenda1);
-        listView_agenda.setAdapter(caListViewAdapter1);
+        sectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
-        listView_agenda.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                if (favoriteList.contains(Integer.valueOf((int) l))) {
-                    favoriteList.remove(Integer.valueOf((int) l));
-                } else {
-                    favoriteList.add((int) l);
-                }
-                caListViewAdapter1.notifyDataSetChanged();
-            }
-        });
+        viewPager = (ViewPager) findViewById(R.id.ca_viewPager);
+        viewPager.setAdapter(sectionsPagerAdapter);
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.ca_tabLayout);
+        tabLayout.setupWithViewPager(viewPager);
     }
 
-    private void setAgenda() {
-        String[] data;
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
-        agenda1 = new ArrayList<>();
-        for (int i = 0; i < agendaTime1.length; i++) {
-            data = new String[4];
-            data[0] = agendaTime1[i];
-            data[1] = agendaRoom1[i];
-            data[2] = agendaTitle1[i];
-            data[3] = Integer.toString(i);
-            agenda1.add(data);
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+
+        public SectionsPagerAdapter(FragmentManager fm) {
+            super(fm);
         }
 
-        agenda2 = new ArrayList<>();
-        for (int i = 0; i < agendaTime2.length; i++) {
-            data = new String[4];
-            data[0] = agendaTime2[i];
-            data[1] = agendaRoom2[i];
-            data[2] = agendaTitle2[i];
-            data[3] = Integer.toString(i);
-            agenda2.add(data);
+        @Override
+        public Fragment getItem(int position) {
+            // getItem is called to instantiate the fragment for the given page.
+            Bundle bundle = new Bundle();
+            switch (position) {
+                case 0:
+                    bundle.putStringArray("agendaTime", agendaTime1);
+                    bundle.putStringArray("agendaRoom", agendaRoom1);
+                    bundle.putStringArray("agendaTitle", agendaTitle1);
+                    caFragment.setArguments(bundle);
+                    return caFragment;
+                case 1:
+                    bundle.putStringArray("agendaTime", agendaTime2);
+                    bundle.putStringArray("agendaRoom", agendaRoom2);
+                    bundle.putStringArray("agendaTitle", agendaTitle2);
+                    caFragment2.setArguments(bundle);
+                    return caFragment2;
+                case 2:
+                    bundle.putStringArray("agendaTime", agendaTime3);
+                    bundle.putStringArray("agendaRoom", agendaRoom3);
+                    bundle.putStringArray("agendaTitle", agendaTitle3);
+                    caFragment3.setArguments(bundle);
+                    return caFragment3;
+            }
+            return null;
         }
 
-        agenda3 = new ArrayList<>();
-        for (int i = 0; i < agendaTime3.length; i++) {
-            data = new String[4];
-            data[0] = agendaTime3[i];
-            data[1] = agendaRoom3[i];
-            data[2] = agendaTitle3[i];
-            data[3] = Integer.toString(i);
-            agenda3.add(data);
+        @Override
+        public int getCount() {
+            return 3;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            switch (position) {
+                case 0:
+                    return "MAY 3";
+                case 1:
+                    return "MAY 4";
+                case 2:
+                    return "MAY 5";
+            }
+            return null;
         }
     }
 
@@ -175,7 +205,7 @@ public class ConferenceAgendaActivity extends AppCompatActivity {
             "Building Offline Ready Mobile Apps",
             "Debugging with Fiddler",
             "Performance Tuning Your Mobile Web Apps",
-            "Cross platform Telerik Native Movile UI",
+            "Cross platform Telerik Native Mobile UI",
             "Advanced Kendo UI"
     };
 }

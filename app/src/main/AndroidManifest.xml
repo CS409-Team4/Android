@@ -26,7 +26,7 @@
             android:label="User profile"></activity>
         <activity
             android:name=".ConferenceAgendaActivity"
-            android:label="Conference Agenda"></activity>
+            android:label="Conference agenda"></activity>
         <activity
             android:name=".ItemLayoutsActivity"
             android:label="Item layouts"></activity>
