@@ -14,4 +14,8 @@
     <color name="colorTransparent">#00000000</color>
     <color name="colorBlack">#000000</color>
     <color name="colorActionBar">#151F2F</color>
+    <color name="colorBlueBackground">#30BCFF</color>
+    <color name="colorBlueBackgroundLight">#6630BCFF</color>
+    <color name="colorTabIndicator">#151F2F</color>
+    <color name="colorTabIndicatorLight">#66151F2F</color>
 </resources>

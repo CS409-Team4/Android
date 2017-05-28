@@ -5,9 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ListView
-        android:id="@+id/sl_listView"
+    <!--<ListView-->
+        <!--android:id="@+id/sl_listView"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
+
+    <!-- Need to wrap DragListView in another layout for
+            wrap_content to work for some reason -->
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <com.woxthebox.draglistview.DragListView
+            android:id="@+id/dragListView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </FrameLayout>
 
 </LinearLayout>

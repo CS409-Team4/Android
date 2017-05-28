@@ -1,7 +1,5 @@
 package com.example.jangyoungsoo.iui_android;
 
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -10,8 +8,6 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 
 import java.util.ArrayList;
 
@@ -19,10 +15,10 @@ public class SelectionActivity extends AppCompatActivity {
 
     private SectionsPagerAdapter sectionsPagerAdapter;
     private ViewPager viewPager;
+    public static TabLayout tabLayout;
 
     public static ArrayList<SLItem> slItems;
-    public static SLListViewAdapter slListViewAdapter;
-    public static SLListViewAdapter slListViewAdapterFav;
+    public static ArrayList<SLItem> slItemsFav;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +33,7 @@ public class SelectionActivity extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.sl_viewPager);
         viewPager.setAdapter(sectionsPagerAdapter);
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.sl_tabLayout);
+        tabLayout = (TabLayout) findViewById(R.id.sl_tabLayout);
         tabLayout.setupWithViewPager(viewPager);
 
         slItems = new ArrayList<>();
@@ -71,25 +67,6 @@ public class SelectionActivity extends AppCompatActivity {
                 "As hybrid mobile apps scale to massive amounts of users and tremendous amount of data, developers need to monitor and trace the app’s performance. Crittercism is the world's first mobile application performance management (mAPM) solution, offering both error monitoring and service monitoring solutions. The Crittercism service monitors every aspect of mobile app performance, allowing Developers and IT Operations to deliver high performing, highly reliable, highly available mobile apps.",
                 "As hybrid mobile apps scale to massive amounts of users and tremendous amount of data, developers need to monitor and trace the app’s performance.",
                 false, 5));
-    }
-
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            case R.id.action_reorder:
-//                getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#30BCFF")));
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity_selection, menu);
-        return true;
     }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
