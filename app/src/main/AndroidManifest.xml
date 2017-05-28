@@ -30,6 +30,9 @@
         <activity
             android:name=".ItemLayoutsActivity"
             android:label="Item layouts"></activity>
+        <activity
+            android:name=".SelectionActivity"
+            android:label="Selection"></activity>
     </application>
 
 </manifest>

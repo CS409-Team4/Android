@@ -58,6 +58,10 @@ public class MainActivity extends AppCompatActivity
                         intent = new Intent(MainActivity.this, ItemLayoutsActivity.class);
                         startActivity(intent);
                         break;
+                    case 4:
+                        intent = new Intent(MainActivity.this, SelectionActivity.class);
+                        startActivity(intent);
+                        break;
                 }
             }
         });
