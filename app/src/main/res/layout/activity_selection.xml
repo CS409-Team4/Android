@@ -16,9 +16,14 @@
         app:tabIndicatorColor="#151F2F"
         app:tabIndicatorHeight="2dp" />
 
-    <android.support.v4.view.ViewPager
+    <com.example.jangyoungsoo.iui_android.NonSwipeableViewPager
         android:id="@+id/sl_viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <!--<android.support.v4.view.ViewPager-->
+        <!--android:id="@+id/sl_viewPager"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
 
 </LinearLayout>

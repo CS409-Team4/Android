@@ -62,6 +62,10 @@ public class MainActivity extends AppCompatActivity
                         intent = new Intent(MainActivity.this, SelectionActivity.class);
                         startActivity(intent);
                         break;
+                    case 5:
+                        intent = new Intent(MainActivity.this, NaverHomeActivity.class);
+                        startActivity(intent);
+                        break;
                 }
             }
         });
