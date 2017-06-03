@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 public class NHFragment extends Fragment {
 
@@ -13,9 +14,11 @@ public class NHFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_naverhome, container, false);
 
-//        WebView myWebView = (WebView) view.findViewById(R.id.nh_webView);
-//        myWebView.loadUrl("http://m.naver.com");
+        WebView myWebView = (WebView) view.findViewById(R.id.nh_webView);
+        myWebView.setWebViewClient(new WebViewClient());
+        myWebView.loadUrl("http://m.naver.com");
 
         return view;
     }
+
 }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#00C73C</color>
+    <color name="colorPrimary">#151F2F</color>
     <color name="colorPrimaryDark">#00AA40</color>
     <color name="colorAccent">#469664</color>
     <color name="colorAccentLight">#19FFFFFF</color>
-    <color name="colorBackground">#D4D4D4</color>
+    <color name="colorBackground">#455B66</color>
     <color name="colorTab">#86D086</color>
     <color name="colorRed">#fe8256</color>
     <color name="colorLightblue">#899bfe</color>
@@ -13,9 +13,13 @@
     <color name="colorBlue">#3c5bfe</color>
     <color name="colorTransparent">#00000000</color>
     <color name="colorBlack">#000000</color>
-    <color name="colorActionBar">#151F2F</color>
     <color name="colorBlueBackground">#30BCFF</color>
     <color name="colorBlueBackgroundLight">#6630BCFF</color>
     <color name="colorTabIndicator">#151F2F</color>
     <color name="colorTabIndicatorLight">#66151F2F</color>
+    <color name="colorNHNavText">#505050</color>
+    <color name="colorDropTransparent">#30000000</color>
+    <color name="colorNHPrimary">#00C73C</color>
+    <color name="colorNHBackground">#F0F0F0</color>
+    <color name="colorSLBackground">#F3F5FC</color>
 </resources>

@@ -1,21 +1,32 @@
 package com.example.jangyoungsoo.iui_android;
 
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.content.ContextCompat;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.webkit.WebView;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class NaverHomeActivity extends AppCompatActivity {
 
+    private DrawerLayout drawerLayout;
+
     private SectionsPagerAdapter sectionsPagerAdapter;
     private ViewPager viewPager;
+
+    private Boolean dropdown;
+    private LinearLayout layout_dropdown;
+    private LinearLayout underbg_dropdown;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +41,25 @@ public class NaverHomeActivity extends AppCompatActivity {
         // finally change the color
         window.setStatusBarColor(ContextCompat.getColor(this, R.color.colorPrimaryDark));
 
+        Button button_navopen = (Button) findViewById(R.id.nh_button_navopen);
+        drawerLayout = (DrawerLayout) findViewById(R.id.nh_drawer_layout);
+        button_navopen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+        });
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nh_nav_view);
+        View header = navigationView.getHeaderView(0);
+        Button button_navclose = (Button) header.findViewById(R.id.nh_button_navclose);
+        button_navclose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout.closeDrawers();
+            }
+        });
+
         sectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         viewPager = (ViewPager) findViewById(R.id.nh_viewPager);
@@ -38,8 +68,24 @@ public class NaverHomeActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.nh_tabLayout);
         tabLayout.setupWithViewPager(viewPager);
 
-        WebView myWebView = (WebView) findViewById(R.id.nh_webView);
-        myWebView.loadUrl("http://www.naver.com");
+//        dropdown = false;
+//        Button button_dropdown = (Button) findViewById(R.id.nh_button_dropdown);
+//        layout_dropdown = (LinearLayout) findViewById(R.id.nh_layout_dropdown);
+//        underbg_dropdown = (LinearLayout) findViewById(R.id.nh_underbg_dropdown);
+//        button_dropdown.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (!dropdown) {
+//                    layout_dropdown.setVisibility(View.VISIBLE);
+//                    underbg_dropdown.setVisibility(View.VISIBLE);
+//                    dropdown = true;
+//                } else {
+//                    layout_dropdown.setVisibility(View.GONE);
+//                    underbg_dropdown.setVisibility(View.GONE);
+//                    dropdown = false;
+//                }
+//            }
+//        });
     }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {

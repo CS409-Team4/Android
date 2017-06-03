@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <TextView
+        android:id="@+id/sl_detail_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Master the Essentials of UI Test Automation: Chapter One"
+        android:textColor="#455b66"
+        android:textSize="22dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="10dp"/>
+
+    <TextView
+        android:id="@+id/sl_detail_textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chapter One: Introduction The goal of this series is to help you understand the right questions to ask of you, your team and your organization. There won't be any Best Practices; there won't be any silver bullets. What we hope is to convey the right information to help you get started on the right foot and get through some of the most common problems teams hit when starting out with UI test automation."
+        android:textColor="#677881"
+        android:textSize="14dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="18dp"
+        android:layout_marginRight="10dp"/>
+
+</LinearLayout>

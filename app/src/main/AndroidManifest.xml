@@ -36,6 +36,9 @@
             android:name=".SelectionActivity"
             android:label="Selection"></activity>
         <activity
+            android:name=".SLDetailActivity"
+            android:label="Selection"></activity>
+        <activity
             android:name=".NaverHomeActivity"
             android:label="Naver home"
             android:theme="@style/AppTheme.NoActionBar"></activity>
