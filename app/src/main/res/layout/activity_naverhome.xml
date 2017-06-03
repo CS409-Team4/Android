@@ -64,49 +64,17 @@
 
         </LinearLayout>
 
-        <LinearLayout
+        <android.support.design.widget.TabLayout
+            android:id="@+id/nh_tabLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <android.support.design.widget.TabLayout
-                android:id="@+id/nh_tabLayout"
-                android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:paddingLeft="14dp"
-                android:paddingRight="14dp"
-                app:tabTextAppearance="@style/CustomTabText"
-                app:tabTextColor="#000000"
-                app:tabSelectedTextColor="@color/colorPrimary"
-                app:tabIndicatorColor="@color/colorPrimaryDark"
-                app:tabIndicatorHeight="3dp"
-                app:tabMode="scrollable"
-                app:tabMinWidth="20dp"
-                app:tabPaddingStart="7dp"
-                app:tabPaddingEnd="7dp"
-                android:clipToPadding="false"
-                android:background="@drawable/nh_button"/>
-
-            <FrameLayout
-                android:layout_width="46dp"
-                android:layout_height="50dp">
-
-                <Button
-                    android:id="@+id/nh_button_dropdown"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/nh_button"/>
-
-                <ImageView
-                    android:layout_width="22dp"
-                    android:layout_height="16dp"
-                    app:srcCompat="@drawable/icon_down"
-                    android:layout_gravity="center" />
-
-            </FrameLayout>
-
-        </LinearLayout>
+            android:layout_height="50dp"
+            app:tabTextAppearance="@style/CustomTabText"
+            app:tabTextColor="#000000"
+            app:tabSelectedTextColor="@color/colorPrimary"
+            app:tabIndicatorColor="@color/colorPrimaryDark"
+            app:tabIndicatorHeight="3dp"
+            app:tabMode="fixed"
+            android:background="@drawable/nh_button"/>
 
         <FrameLayout
             android:layout_width="match_parent"

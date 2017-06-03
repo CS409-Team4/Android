@@ -28,7 +28,8 @@
             android:label="User profile"></activity>
         <activity
             android:name=".ConferenceAgendaActivity"
-            android:label="Conference agenda"></activity>
+            android:label="Conference agenda"
+            android:windowSoftInputMode="stateHidden"></activity>
         <activity
             android:name=".ItemLayoutsActivity"
             android:label="Item layouts"></activity>
@@ -39,8 +40,12 @@
             android:name=".SLDetailActivity"
             android:label="Selection"></activity>
         <activity
-            android:name=".NaverHomeActivity"
-            android:label="Naver home"
+        android:name=".NaverHomeActivity"
+        android:label="Naver home"
+        android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".NaverOtherActivity"
+            android:label="Naver other"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

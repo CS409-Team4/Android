@@ -6,20 +6,20 @@
     android:layout_height="match_parent"
     android:background="#667296">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:padding="16dp">
+    <!--<FrameLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="80dp"-->
+        <!--android:padding="16dp">-->
 
-        <SearchView
-            android:id="@+id/ca_searchView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#ffffff"
-            android:queryHint="Search"
-            android:iconifiedByDefault="false" />
+        <!--<SearchView-->
+            <!--android:id="@+id/ca_searchView"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:background="#ffffff"-->
+            <!--android:queryHint="Search"-->
+            <!--android:iconifiedByDefault="false" />-->
 
-    </FrameLayout>
+    <!--</FrameLayout>-->
 
     <ListView
         android:id="@+id/ca_listView"

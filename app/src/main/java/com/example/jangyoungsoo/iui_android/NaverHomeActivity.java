@@ -1,5 +1,6 @@
 package com.example.jangyoungsoo.iui_android;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -15,18 +16,15 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.LinearLayout;
 
 public class NaverHomeActivity extends AppCompatActivity {
 
-    private DrawerLayout drawerLayout;
+    public final static String EXTRA_URL = "com.example.jangyoungsoo.iui_android.URL";
+
+    public static DrawerLayout drawerLayout;
 
     private SectionsPagerAdapter sectionsPagerAdapter;
     private ViewPager viewPager;
-
-    private Boolean dropdown;
-    private LinearLayout layout_dropdown;
-    private LinearLayout underbg_dropdown;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,11 +50,57 @@ public class NaverHomeActivity extends AppCompatActivity {
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nh_nav_view);
         View header = navigationView.getHeaderView(0);
+
         Button button_navclose = (Button) header.findViewById(R.id.nh_button_navclose);
+        Button button_mail = (Button) header.findViewById(R.id.nh_button_mail);
+        Button button_cafe = (Button) header.findViewById(R.id.nh_button_cafe);
+        Button button_blog = (Button) header.findViewById(R.id.nh_button_blog);
+        Button button_kin = (Button) header.findViewById(R.id.nh_button_kin);
+
         button_navclose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 drawerLayout.closeDrawers();
+            }
+        });
+
+        button_mail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(NaverHomeActivity.this, NaverOtherActivity.class);
+                String message = "http://mail.naver.com";
+                intent.putExtra(EXTRA_URL, message);
+                startActivity(intent);
+            }
+        });
+
+        button_cafe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(NaverHomeActivity.this, NaverOtherActivity.class);
+                String message = "http://cafe.naver.com";
+                intent.putExtra(EXTRA_URL, message);
+                startActivity(intent);
+            }
+        });
+
+        button_blog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(NaverHomeActivity.this, NaverOtherActivity.class);
+                String message = "http://blog.naver.com";
+                intent.putExtra(EXTRA_URL, message);
+                startActivity(intent);
+            }
+        });
+
+        button_kin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(NaverHomeActivity.this, NaverOtherActivity.class);
+                String message = "http://kin.naver.com";
+                intent.putExtra(EXTRA_URL, message);
+                startActivity(intent);
             }
         });
 
@@ -67,25 +111,6 @@ public class NaverHomeActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.nh_tabLayout);
         tabLayout.setupWithViewPager(viewPager);
-
-//        dropdown = false;
-//        Button button_dropdown = (Button) findViewById(R.id.nh_button_dropdown);
-//        layout_dropdown = (LinearLayout) findViewById(R.id.nh_layout_dropdown);
-//        underbg_dropdown = (LinearLayout) findViewById(R.id.nh_underbg_dropdown);
-//        button_dropdown.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (!dropdown) {
-//                    layout_dropdown.setVisibility(View.VISIBLE);
-//                    underbg_dropdown.setVisibility(View.VISIBLE);
-//                    dropdown = true;
-//                } else {
-//                    layout_dropdown.setVisibility(View.GONE);
-//                    underbg_dropdown.setVisibility(View.GONE);
-//                    dropdown = false;
-//                }
-//            }
-//        });
     }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
@@ -103,7 +128,7 @@ public class NaverHomeActivity extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 8;
+            return 5;
         }
 
         @Override
@@ -116,14 +141,8 @@ public class NaverHomeActivity extends AppCompatActivity {
                 case 2:
                     return "스포츠";
                 case 3:
-                    return "웹툰∙뿜";
-                case 4:
-                    return "차∙테크";
-                case 5:
                     return "쇼핑";
-                case 6:
-                    return "동영상";
-                case 7:
+                case 4:
                     return "푸드";
             }
             return null;

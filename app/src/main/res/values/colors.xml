@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#151F2F</color>
     <color name="colorPrimaryDark">#00AA40</color>
-    <color name="colorAccent">#469664</color>
+    <color name="colorAccent">#4060FA</color>
     <color name="colorAccentLight">#19FFFFFF</color>
     <color name="colorBackground">#455B66</color>
     <color name="colorTab">#86D086</color>
@@ -22,4 +22,7 @@
     <color name="colorNHPrimary">#00C73C</color>
     <color name="colorNHBackground">#F0F0F0</color>
     <color name="colorSLBackground">#F3F5FC</color>
+    <color name="colorUPtext">#1e2d7e</color>
+    <color name="colorUPtext2">#757575</color>
+    <color name="colorLayoutsText">#151f2f</color>
 </resources>

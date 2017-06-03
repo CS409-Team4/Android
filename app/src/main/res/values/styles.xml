@@ -21,4 +21,9 @@
         <item name="android:textSize">20dp</item>
     </style>
 
+    <style name="checkBoxStyle" parent="Base.Theme.AppCompat">
+        <item name="colorAccent">@color/colorBlueBackground</item>
+        <item name="android:textColorSecondary">@color/colorUPtext2</item>
+    </style>
+
 </resources>

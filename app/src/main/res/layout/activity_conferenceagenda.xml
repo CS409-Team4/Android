@@ -16,7 +16,23 @@
         app:tabIndicatorColor="#FAC950"
         app:tabIndicatorHeight="5dp" />
 
-    <android.support.v4.view.ViewPager
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:padding="16dp"
+        android:background="#667296">
+
+        <SearchView
+            android:id="@+id/ca_searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:queryHint="Search"
+            android:iconifiedByDefault="false" />
+
+    </FrameLayout>
+
+    <com.example.jangyoungsoo.iui_android.NonSwipeableViewPager
         android:id="@+id/ca_viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

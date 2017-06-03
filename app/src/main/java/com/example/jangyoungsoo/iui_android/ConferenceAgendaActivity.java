@@ -10,6 +10,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.SearchView;
 
 public class ConferenceAgendaActivity extends AppCompatActivity {
 
@@ -20,6 +21,10 @@ public class ConferenceAgendaActivity extends AppCompatActivity {
     private CAFragment caFragment;
     private CAFragment caFragment2;
     private CAFragment caFragment3;
+
+    public static SearchView ca_searchview;
+    public static String queryText = "";
+    public static Boolean startSearch = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +45,30 @@ public class ConferenceAgendaActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.ca_tabLayout);
         tabLayout.setupWithViewPager(viewPager);
+
+        ca_searchview = (SearchView) findViewById(R.id.ca_searchView);
+        ca_searchview.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                startSearch = true;
+                queryText = newText;
+                if (caFragment.caListViewAdapter != null) {
+                    caFragment.caListViewAdapter.getFilter().filter(newText);
+                }
+                if (caFragment2.caListViewAdapter != null) {
+                    caFragment2.caListViewAdapter.getFilter().filter(newText);
+                }
+                if (caFragment3.caListViewAdapter != null) {
+                    caFragment3.caListViewAdapter.getFilter().filter(newText);
+                }
+                return false;
+            }
+        });
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {

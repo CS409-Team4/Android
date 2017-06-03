@@ -13,9 +13,9 @@ import java.util.ArrayList;
 
 public class CAFragment extends Fragment {
 
-    private CAListViewAdapter caListViewAdapter;
+    public CAListViewAdapter caListViewAdapter;
     private ArrayList<CAItem> agenda;
-    public SearchView ca_searchview;
+//    public SearchView ca_searchview;
 
     private String[] agendaTime;
     private String[] agendaRoom;
@@ -39,7 +39,7 @@ public class CAFragment extends Fragment {
             agenda.add(caitem);
         }
 
-        ca_searchview = (SearchView) view.findViewById(R.id.ca_searchView);
+//        ca_searchview = (SearchView) view.findViewById(R.id.ca_searchView);
         ListView ca_listview = (ListView) view.findViewById(R.id.ca_listView);
 
         caListViewAdapter = new CAListViewAdapter(getContext(), agenda);
@@ -58,18 +58,22 @@ public class CAFragment extends Fragment {
             }
         });
 
-        ca_searchview.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
+        if (ConferenceAgendaActivity.startSearch) {
+            caListViewAdapter.getFilter().filter(ConferenceAgendaActivity.queryText);
+        }
 
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                caListViewAdapter.getFilter().filter(newText);
-                return false;
-            }
-        });
+//        ConferenceAgendaActivity.ca_searchview.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String newText) {
+//                caListViewAdapter.getFilter().filter(newText);
+//                return false;
+//            }
+//        });
 
         return view;
     }
