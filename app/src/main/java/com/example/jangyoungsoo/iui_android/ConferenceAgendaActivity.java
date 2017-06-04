@@ -12,11 +12,16 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.SearchView;
 
+import java.util.ArrayList;
+
 public class ConferenceAgendaActivity extends AppCompatActivity {
 
     private SectionsPagerAdapter sectionsPagerAdapter;
-
     private ViewPager viewPager;
+
+    public static ArrayList<CAItem> agenda1;
+    public static ArrayList<CAItem> agenda2;
+    public static ArrayList<CAItem> agenda3;
 
     private CAFragment caFragment;
     private CAFragment caFragment2;
@@ -69,6 +74,27 @@ public class ConferenceAgendaActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        CAItem caitem;
+
+        agenda1 = new ArrayList<>();
+        for (int i = 0; i < agendaTime1.length; i++) {
+            caitem = new CAItem(agendaTime1[i], agendaRoom1[i], agendaTitle1[i], agendaFav1[i]);
+            agenda1.add(caitem);
+        }
+
+        agenda2 = new ArrayList<>();
+        for (int i = 0; i < agendaTime2.length; i++) {
+            caitem = new CAItem(agendaTime2[i], agendaRoom2[i], agendaTitle2[i], agendaFav2[i]);
+            agenda2.add(caitem);
+        }
+
+        agenda3 = new ArrayList<>();
+        for (int i = 0; i < agendaTime3.length; i++) {
+            caitem = new CAItem(agendaTime3[i], agendaRoom2[i], agendaTitle3[i], agendaFav3[i]);
+            agenda3.add(caitem);
+        }
+
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -99,21 +125,15 @@ public class ConferenceAgendaActivity extends AppCompatActivity {
             Bundle bundle = new Bundle();
             switch (position) {
                 case 0:
-                    bundle.putStringArray("agendaTime", agendaTime1);
-                    bundle.putStringArray("agendaRoom", agendaRoom1);
-                    bundle.putStringArray("agendaTitle", agendaTitle1);
+                    bundle.putInt("agenda", 1);
                     caFragment.setArguments(bundle);
                     return caFragment;
                 case 1:
-                    bundle.putStringArray("agendaTime", agendaTime2);
-                    bundle.putStringArray("agendaRoom", agendaRoom2);
-                    bundle.putStringArray("agendaTitle", agendaTitle2);
+                    bundle.putInt("agenda", 2);
                     caFragment2.setArguments(bundle);
                     return caFragment2;
                 case 2:
-                    bundle.putStringArray("agendaTime", agendaTime3);
-                    bundle.putStringArray("agendaRoom", agendaRoom3);
-                    bundle.putStringArray("agendaTitle", agendaTitle3);
+                    bundle.putInt("agenda", 3);
                     caFragment3.setArguments(bundle);
                     return caFragment3;
             }
@@ -166,6 +186,15 @@ public class ConferenceAgendaActivity extends AppCompatActivity {
             "Responsive Apps with Telerik DevCraft"
     };
 
+    private Boolean[] agendaFav1 = {
+            true,
+            false,
+            false,
+            true,
+            false,
+            false
+    };
+
     private String[] agendaTime2 = {
             "9:30 AM - 12:30 PM",
             "10:45 AM - 11:30 AM",
@@ -200,6 +229,18 @@ public class ConferenceAgendaActivity extends AppCompatActivity {
             "AngularJS and Kendo UI",
             "Building a CRM Portal in 45 Minutes",
             "JavaScript Beyond the Basics"
+    };
+
+    private Boolean[] agendaFav2 = {
+            true,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            false,
+            true
     };
 
     private String[] agendaTime3 = {
@@ -237,4 +278,17 @@ public class ConferenceAgendaActivity extends AppCompatActivity {
             "Cross platform Telerik Native Mobile UI",
             "Advanced Kendo UI"
     };
+
+    private Boolean[] agendaFav3 = {
+            true,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            false,
+            true
+    };
+
 }

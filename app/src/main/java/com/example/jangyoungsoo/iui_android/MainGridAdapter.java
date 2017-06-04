@@ -1,12 +1,10 @@
 package com.example.jangyoungsoo.iui_android;
 
 import android.content.Context;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -45,6 +43,7 @@ public class MainGridAdapter extends BaseAdapter {
         holder.gridText =(TextView) itemView.findViewById(R.id.grid_text);
         holder.gridImage =(ImageView) itemView.findViewById(R.id.grid_image);
         holder.gridImage.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        holder.gridImage.getLayoutParams().height = (MainActivity.width - 165) / 2;
 
         holder.gridText.setText(gridTexts[position]);
         holder.gridImage.setImageResource(gridImages[position]);

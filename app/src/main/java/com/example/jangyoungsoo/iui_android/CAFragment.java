@@ -7,19 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.SearchView;
-
-import java.util.ArrayList;
 
 public class CAFragment extends Fragment {
 
     public CAListViewAdapter caListViewAdapter;
-    private ArrayList<CAItem> agenda;
-//    public SearchView ca_searchview;
 
-    private String[] agendaTime;
-    private String[] agendaRoom;
-    private String[] agendaTitle;
+    private int agendaIndex;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -27,22 +20,22 @@ public class CAFragment extends Fragment {
 
         Bundle bundle = getArguments();
         if (bundle != null) {
-            agendaTime = bundle.getStringArray("agendaTime");
-            agendaRoom = bundle.getStringArray("agendaRoom");
-            agendaTitle = bundle.getStringArray("agendaTitle");
+            agendaIndex = bundle.getInt("agenda");
         }
 
-        agenda = new ArrayList<>();
-        CAItem caitem;
-        for (int i = 0; i < agendaTime.length; i++) {
-            caitem = new CAItem(agendaTime[i], agendaRoom[i], agendaTitle[i], false);
-            agenda.add(caitem);
-        }
-
-//        ca_searchview = (SearchView) view.findViewById(R.id.ca_searchView);
         ListView ca_listview = (ListView) view.findViewById(R.id.ca_listView);
 
-        caListViewAdapter = new CAListViewAdapter(getContext(), agenda);
+        switch (agendaIndex) {
+            case 1:
+                caListViewAdapter = new CAListViewAdapter(getContext(), ConferenceAgendaActivity.agenda1);
+                break;
+            case 2:
+                caListViewAdapter = new CAListViewAdapter(getContext(), ConferenceAgendaActivity.agenda2);
+                break;
+            case 3:
+                caListViewAdapter = new CAListViewAdapter(getContext(), ConferenceAgendaActivity.agenda3);
+                break;
+        }
 
         ca_listview.setAdapter(caListViewAdapter);
         ca_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -61,19 +54,6 @@ public class CAFragment extends Fragment {
         if (ConferenceAgendaActivity.startSearch) {
             caListViewAdapter.getFilter().filter(ConferenceAgendaActivity.queryText);
         }
-
-//        ConferenceAgendaActivity.ca_searchview.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String newText) {
-//                caListViewAdapter.getFilter().filter(newText);
-//                return false;
-//            }
-//        });
 
         return view;
     }

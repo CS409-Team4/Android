@@ -74,29 +74,11 @@
             app:tabIndicatorColor="@color/colorPrimaryDark"
             app:tabIndicatorHeight="3dp"
             app:tabMode="fixed"
-            android:background="@drawable/nh_button"/>
+            android:background="#ffffff"/>
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <!--<LinearLayout-->
-                <!--android:id="@+id/nh_layout_dropdown"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="246dp"-->
-                <!--android:background="@color/colorYellow"-->
-                <!--android:visibility="gone"-->
-                <!--android:orientation="vertical">-->
-            <!--</LinearLayout>-->
-
-            <!--<LinearLayout-->
-                <!--android:id="@+id/nh_underbg_dropdown"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:background="@color/colorDropTransparent"-->
-                <!--android:visibility="gone"-->
-                <!--android:orientation="vertical">-->
-            <!--</LinearLayout>-->
 
             <LinearLayout
                 android:layout_width="match_parent"

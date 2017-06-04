@@ -68,7 +68,7 @@ public class NaverHomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(NaverHomeActivity.this, NaverOtherActivity.class);
-                String message = "http://mail.naver.com";
+                String message = "https://nid.naver.com/nidlogin.login?svctype=262144&url=http%3A%2F%2Fm.mail.naver.com%2Fm%2Flist%2F";
                 intent.putExtra(EXTRA_URL, message);
                 startActivity(intent);
             }
@@ -78,7 +78,7 @@ public class NaverHomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(NaverHomeActivity.this, NaverOtherActivity.class);
-                String message = "http://cafe.naver.com";
+                String message = "http://m.cafe.naver.com";
                 intent.putExtra(EXTRA_URL, message);
                 startActivity(intent);
             }
@@ -98,7 +98,7 @@ public class NaverHomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(NaverHomeActivity.this, NaverOtherActivity.class);
-                String message = "http://kin.naver.com";
+                String message = "http://m.kin.naver.com/mobile/index.nhn";
                 intent.putExtra(EXTRA_URL, message);
                 startActivity(intent);
             }

@@ -24,6 +24,9 @@
             android:name=".LayoutsActivity"
             android:label="Layouts"></activity>
         <activity
+            android:name=".AboutActivity"
+            android:label="About"></activity>
+        <activity
             android:name=".UserProfileActivity"
             android:label="User profile"></activity>
         <activity

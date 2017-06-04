@@ -8,7 +8,7 @@
     <ImageView
         android:id="@+id/grid_image"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="153dp"
         android:src="@mipmap/ic_launcher" />
 
     <TextView
