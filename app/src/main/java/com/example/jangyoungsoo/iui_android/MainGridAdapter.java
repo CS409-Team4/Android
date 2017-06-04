@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainGridAdapter extends BaseAdapter {
+
     private Context mContext;
     private static LayoutInflater inflater = null;
 
@@ -68,4 +69,5 @@ public class MainGridAdapter extends BaseAdapter {
             R.drawable.screen_listview_selection,
             R.drawable.screen_naver_mainpage
     };
+
 }

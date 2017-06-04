@@ -31,7 +31,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
-        android:text="CS496, SOC of KAIST"
+        android:text="CS409, SOC of KAIST"
         android:textSize="16dp"
         android:layout_marginBottom="10dp"/>
 
