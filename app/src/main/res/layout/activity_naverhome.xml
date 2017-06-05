@@ -68,7 +68,6 @@
             android:id="@+id/nh_tabLayout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            app:tabTextAppearance="@style/CustomTabText"
             app:tabTextColor="#000000"
             app:tabSelectedTextColor="@color/colorPrimary"
             app:tabIndicatorColor="@color/colorPrimaryDark"
